@@ -13,6 +13,7 @@
     <section id="content"></section>
 
     <script type="module">
+      import { DataMovie } from "./data/dataMovie.js"
       import { NavBar } from "./component/NavBar/script.js";
       import { Movies } from "./component/Movies/script.js";
 
@@ -44,6 +45,9 @@
       V.renderNavBar = function (hAbout) {
         let header = document.querySelector("#header");
         header.innerHTML = NavBar.format(hAbout);
+      };
+
+      V.renderMovies = function (DataMovie) {
         let content = document.querySelector("#content");
         content.innerHTML = Movies.format(DataMovie);
       };
