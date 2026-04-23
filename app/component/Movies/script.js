@@ -1,12 +1,21 @@
 let templateFile = await fetch("./component/Movies/template.html");
 let template = await templateFile.text();
+let templateLiFile = await fetch("./component/Movies/templateLi.html");
+let templateLi = await templateFile.text();
 
-let NavBar = {};
+let Movies = {};
 
-NavBar.format = function (hAbout, hHome) {
+Movies.format = function (DataMovie) {
   let html = template;
-  html = html.replace("{{hAbout}}", hAbout);
+  let movieLi = "";
+    for (let movie of DataMovie) {
+        let li = templateLi;
+        li = li.replace("{{title}}", movie.name);
+        li = li.replace("{{image}}", movie.image);
+        movieLi += li;
+    }
+  html = html.replace("{{movieList}}", movieLi);
   return html;
 };
 
-export { NavBar };
+export { Movies };
