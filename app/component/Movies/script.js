@@ -10,7 +10,7 @@ Movies.format = function (DataMovie) {
   let movieLi = "";
 
   if (DataMovie == null){
-    html.replace("{{movieList}}", "<h1>Pas de film disponible</h1>");
+    html.replace("{{movieList}}", "<h1>Aucun film disponible pour le moment.</h1>");
   }
 
   else {

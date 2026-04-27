@@ -5,10 +5,15 @@
   color: var(--color-black);
 }
 
+.title {
+  font-size: 2rem;
+}
+
 .movie__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   gap: 2rem;
   padding: 2rem;
 }
