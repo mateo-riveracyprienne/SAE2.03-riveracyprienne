@@ -25,3 +25,19 @@ function readMoviesController(){
     $movies = getAllMovies();
     return $movies;
 }
+
+function addMoviesController(){
+    $tit = $_REQUEST['titre'];
+    $rea = $_REQUEST['realisateur'];
+    $year = $_REQUEST['annee'];
+    $dur = $_REQUEST['duree'];
+    $desc = $_REQUEST['description'];
+    $img = $_REQUEST['image'];
+    $age = $_REQUEST['age'];
+    $cat = $_REQUEST['categorie'];
+    $log = addMovies($tit, $rea, $year, $dur, $desc, $img, $age, $cat);
+    if ($log == none){
+        $log = "Erreur";
+    }
+    return $log;
+}

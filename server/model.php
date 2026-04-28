@@ -32,3 +32,23 @@ function getAllMovies(){
     $res = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $res; // Retourne les résultats
 }
+
+function addMovies(){
+    // Connexion à la base de données
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "insert into Movies (name, director, year, length, description, id_category, image, trailer, min_age) values (:tit, :rea, :year, :dur, :desc, :img, :age, :cat)";
+    // Prépare la requête SQL
+    $stmt = $cnx->prepare($sql);
+    $stmt -> bindParam(':tit', $tit);
+    $stmt -> bindParam(':rea', $rea);
+    $stmt -> bindParam(':year', $year);
+    $stmt -> bindParam(':dur', $dur);
+    $stmt -> bindParam(':desc', $desc);
+    $stmt -> bindParam(':img', $img);
+    $stmt -> bindParam(':cat', $age);
+    $stmt -> bindParam(':cat', $cat);
+    // Exécute la requête SQL
+    $stmt->execute();
+    $res = "Film ajouté";
+    return $res;
+}

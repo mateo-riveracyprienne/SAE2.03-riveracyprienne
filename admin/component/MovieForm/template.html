@@ -1,43 +1,56 @@
 <div class="form font-sans">
-  <ul class="form-list font-mono">
+  <form method="GET" action="../server/script.php">
+  <ul class="form-list">
     <li class="form-item">
       <p class="input-title">Titre</p>
-      <input required placeholder="Saisir le titre">
+      <input required name='titre' placeholder="Saisir le titre">
     </li>
     <li class="form-item">
       <p class="input-title">Réalisateur</p>
-      <input required placeholder="Saisir le réalisateur">
+      <input required name='realisateur' placeholder="Saisir le réalisateur">
     </li>
     <li class="form-item">
       <p class="input-title">Année de sortie</p>
-      <input required placeholder="Saisir l'année">
+      <input required name='annee' placeholder="Saisir l'année">
     </li>
     <li class="form-item">
       <p class="input-title">Durée</p>
-      <input required placeholder="Saisir la durée en minutes">
+      <input required name='duree' placeholder="Saisir la durée en minutes">
     </li>
     <li class="form-item">
       <p class="input-title">Description</p>
-      <input required placeholder="Saisir la description">
+      <input required name='description' placeholder="Saisir la description">
     </li>
     <li class="form-item">
       <p class="input-title">Image</p>
-      <input required placeholder="Saisir le nom du fichier">
+      <input required name='image' placeholder="Saisir le nom du fichier">
     </li>
     <li class="form-item">
       <p class="input-title">URL</p>
-      <input required placeholder="Saisir l'URL du film">
+      <input required name='url' placeholder="Saisir l'URL du film">
     </li>
     <li class="form-item">
       <p class="input-title">Restriction d'âge</p>
-      <input required placeholder="Saisir l'âge minimum">
+      <input required name='age' placeholder="Saisir l'âge minimum">
     </li>
     <li class="form-item">
-      <select name="catégorie">
-        <option value="Drame">Drame</option>
-        <option value="Action">Action</option>
-        <option value="Animation">Animation</option>
+      <p class="input-title">Catégorie</p>
+      <select name="categorie">
+        <option value="1">Action</option>
+        <option value="2">Comédie</option>
+        <option value="3">Drame</option>
+        <option value="4">Science-fiction</option>
+        <option value="5">Animation</option>
+        <option value="6">Thriller</option>
+        <option value="7">Horreur</option>
+        <option value="8">Aventure</option>
+        <option value="9">Fantaisie</option>
+        <option value="10">Documentaire</option>
       </select>
     </li>
+    <li class="form-item">
+      <imput class="form-button" type="button" value="addMovie" name="todo">Ajouter</imput>
+    </li>
   </ul>
+  </form>
 </div>
