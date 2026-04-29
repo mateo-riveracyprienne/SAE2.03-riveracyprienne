@@ -4,9 +4,10 @@
     padding: 1rem;
 }
 
-.form-list{
+.addMovieForm{
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 .form-item {

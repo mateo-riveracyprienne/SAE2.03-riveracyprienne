@@ -13,12 +13,20 @@
     <script type="module">
       import { Log } from "./component/Log/script.js";
       import { Form } from "./component/MovieForm/script.js";
+      import { DataMovie } from "./data/dataMovie.js";
 
       window.C = {};
 
+      C.handlerAddMovie = async function(){
+        let form = document.querySelector('.addMovieForm');
+        let fd = new FormData(form);
+        let res = await DataMovie.add(fd);
+        V.renderLog(res);
+      }
+
       C.start = function () {
         V.renderLog("Démarrage de l'application");
-        V.renderForm();
+        V.renderForm('C.handlerAddMovie()');
       };
 
       window.V = {};
@@ -28,10 +36,11 @@
         content.innerHTML = Log.format(txt);
       };
 
-      V.renderForm = function () {
+      V.renderForm = function (handler) {
         let content = document.querySelector("#form");
-        content.innerHTML = Form.format();
+        content.innerHTML = Form.format(handler);
       };
+
 
       C.start();
     </script>

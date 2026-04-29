@@ -1,40 +1,13 @@
 <div class="form font-sans">
-  <form method="GET" action="../server/script.php">
-  <ul class="form-list">
-    <li class="form-item">
-      <p class="input-title">Titre</p>
-      <input required name='titre' placeholder="Saisir le titre">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Réalisateur</p>
-      <input required name='realisateur' placeholder="Saisir le réalisateur">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Année de sortie</p>
-      <input required name='annee' placeholder="Saisir l'année">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Durée</p>
-      <input required name='duree' placeholder="Saisir la durée en minutes">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Description</p>
-      <input required name='description' placeholder="Saisir la description">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Image</p>
-      <input required name='image' placeholder="Saisir le nom du fichier">
-    </li>
-    <li class="form-item">
-      <p class="input-title">URL</p>
-      <input required name='url' placeholder="Saisir l'URL du film">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Restriction d'âge</p>
-      <input required name='age' placeholder="Saisir l'âge minimum">
-    </li>
-    <li class="form-item">
-      <p class="input-title">Catégorie</p>
+  <form class="addMovieForm">
+      <input required name="titre" type="text" placeholder="Saisir le titre">
+      <input required name="realisateur" type="text" placeholder="Saisir le réalisateur">
+      <input required name="annee" type="number" placeholder="Saisir l'année">
+      <input required name="duree" type="number" placeholder="Saisir la durée en minutes">
+      <input required name="description" type="text" placeholder="Saisir la description">
+      <input required name="image" type="text" placeholder="Saisir le nom du fichier">
+      <input required name="url" type="text" placeholder="Saisir l'URL du film">
+      <input required name="age" type="number" placeholder="Saisir l'âge minimum">
       <select name="categorie">
         <option value="1">Action</option>
         <option value="2">Comédie</option>
@@ -47,10 +20,6 @@
         <option value="9">Fantaisie</option>
         <option value="10">Documentaire</option>
       </select>
-    </li>
-    <li class="form-item">
-      <imput class="form-button" type="button" value="addMovie" name="todo">Ajouter</imput>
-    </li>
-  </ul>
+      <input onclick="{{handler}}" class="form-button" type="button" value="addMovie" name="todo">
   </form>
 </div>

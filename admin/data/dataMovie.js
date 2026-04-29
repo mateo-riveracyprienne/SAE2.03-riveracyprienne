@@ -1,9 +1,13 @@
-let HOST_URL = "https://mmi.unilim.fr/~riveracyprien1/SAE2.03-riveracyprienne";
+let HOST_URL = "..";
 
 let DataMovie = {};
 
-DataMovie.add = async function(){
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=addMovie");
+DataMovie.add = async function(form){
+    let config = {
+        method: "POST", // méthode HTTP à utiliser
+        body: form // données à envoyer sous forme d'objet FormData
+    };
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=addMovie", config);
     let data = await answer.json();
     return data;
 }
