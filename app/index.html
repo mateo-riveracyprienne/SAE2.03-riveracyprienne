@@ -16,8 +16,10 @@
       import { DataMovie } from "./data/dataMovie.js"
       import { NavBar } from "./component/NavBar/script.js";
       import { Movies } from "./component/Movies/script.js";
+      import { Detail } from "./component/MovieDetail/script.js";
 
       let movies = await DataMovie.requestMovies();
+      
       // Controleur
       // Rappel, écrire window.C plutôt que let C est nécessaire pour tester depuis la console du navigateur
       // Une fois l'application terminée, on pourrait remettre let C.
@@ -28,6 +30,11 @@
           "Ceci est une base de projet pour la SAE2.03 édition 2025. Bonne chance !"
         );
       };
+
+      C.handlerDetail = async function (id) {
+        let details = await DataMovie.requestMoviesDetails(id);
+        V.renderDetail(details)
+      }
 
       C.start = function () {
         V.renderNavBar("C.handlerAbout()");
@@ -52,6 +59,11 @@
       V.renderMovies = function (DataMovie) {
         let content = document.querySelector("#content");
         content.innerHTML = Movies.format(DataMovie);
+      };
+      
+      V.renderDetail = function (MovieDetail) {
+        let content = document.querySelector("#content");
+        content.innerHTML = Detail.format(MovieDetail);
       };
 
       C.start(); // Démarre l'application

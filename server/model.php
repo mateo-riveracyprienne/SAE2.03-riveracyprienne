@@ -53,3 +53,10 @@ function addMovies($tit, $rea, $year, $dur, $desc, $img, $age, $cat, $url){
     $res = "Film ajouté";
     return $res;
 }
+
+function getMovieDetails($id){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "SELECT ";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> bindParam(':id', $id);
+}

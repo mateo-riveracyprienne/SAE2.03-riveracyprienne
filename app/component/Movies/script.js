@@ -18,6 +18,7 @@ Movies.format = function (DataMovie) {
         let li = templateLi;
         li = li.replace("{{title}}", movie.name);
         li = li.replace("{{image}}", movie.image);
+        li = li.replace("{{id}}", C.handlerDetail(movie.id));
         movieLi += li;
     }
     html = html.replace("{{movieList}}", movieLi);

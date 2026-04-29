@@ -27,7 +27,6 @@ function readMoviesController(){
 }
 
 function addMoviesController(){
-    if ( isset($_REQUEST['titre'] )==true && ( isset($_REQUEST['realisateur'] )==true && ( isset($_REQUEST['annee'] )==true )))
     $tit = $_REQUEST['titre'];
     $rea = $_REQUEST['realisateur'];
     $year = $_REQUEST['annee'];
@@ -39,4 +38,10 @@ function addMoviesController(){
     $cat = $_REQUEST['categorie'];
     $log = addMovies($tit, $rea, $year, $dur, $desc, $img, $age, $cat, $url);
     return $log;
+}
+
+function readMovieDetailsController(){
+    $id = $_REQUEST['id'];
+    $details = getMovieDetails($id);
+    return $details;
 }
