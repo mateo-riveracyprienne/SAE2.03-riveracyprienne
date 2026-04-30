@@ -1,4 +1,4 @@
-let templateFile = await fetch("./component/Movies/template.html");
+let templateFile = await fetch("./component/MovieDetail/template.html");
 let template = await templateFile.text();
 
 let Detail = {};
