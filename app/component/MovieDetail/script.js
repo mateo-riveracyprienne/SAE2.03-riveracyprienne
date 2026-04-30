@@ -12,6 +12,7 @@ Detail.format = function (DataMovie) {
   html.replace("{{annee}}", DataMovie.year);
   html.replace("{{categorie}}", DataMovie.category);
   html.replace("{{age}}", DataMovie.min_age);
+  html.replace("{{url}}", DataMovie.trailer);
   return html;
 }
 
