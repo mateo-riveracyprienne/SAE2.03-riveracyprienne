@@ -31,15 +31,18 @@
         );
       };
 
+      C.handlerHome = function () {
+        V.renderMovies(movies);
+      }
+
       C.handlerDetail = async function (id) {
         let details = await DataMovie.requestMoviesDetails(id);
         V.renderDetail(details);
-        
-      }
+      };
 
       C.start = function () {
-        V.renderNavBar("C.handlerAbout()");
-        V.renderMovies(movies)
+        V.renderNavBar("C.handlerAbout()", "C.handlerHome()");
+        V.renderMovies(movies);
       };
 
       
@@ -54,9 +57,9 @@
        * Elle sélectionne l'élément HTML avec l'ID "header" et y insère le contenu
        * formaté par le composant NavBar.
        */
-      V.renderNavBar = function (hAbout) {
+      V.renderNavBar = function (hAbout, hHome) {
         let header = document.querySelector("#header");
-        header.innerHTML = NavBar.format(hAbout);
+        header.innerHTML = NavBar.format(hAbout, hHome);
       };
 
       V.renderMovies = function (DataMovie) {

@@ -43,7 +43,7 @@ function addMoviesController(){
 function readMovieDetailsController(){
     if (isset($_REQUEST['id']) == false){
         return false;
-    }
+    };
     $id = $_REQUEST['id'];
     $details = getMovieDetails($id);
     return $details;
