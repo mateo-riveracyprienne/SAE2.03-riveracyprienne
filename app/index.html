@@ -17,8 +17,7 @@
       import { NavBar } from "./component/NavBar/script.js";
       import { Movies } from "./component/Movies/script.js";
       import { Detail } from "./component/MovieDetail/script.js";
-
-      let movies = await DataMovie.requestMovies();
+      import { Category } from "./component/MovieCategory/script.js";
       
       // Controleur
       // Rappel, écrire window.C plutôt que let C est nécessaire pour tester depuis la console du navigateur
@@ -32,17 +31,28 @@
       };
 
       C.handlerHome = function () {
-        V.renderMovies(movies);
-      }
+        C.start();
+      };
+
+      C.handlerMovie = function () {
+        V.renderCategory("C.handlerCategory()");
+      };
 
       C.handlerDetail = async function (id) {
         let details = await DataMovie.requestMoviesDetails(id);
         V.renderDetail(details);
       };
 
+      C.handlerCategory = async function(){
+        let form = document.querySelector('.category-form');
+        let fd = new FormData(form);
+        let res = await DataMovie.requestMovies(fd);
+        V.renderMovies(res);
+        V.renderNavBar("C.handlerAbout()", "C.handlerHome()", "C.handlerMovie()");
+      };
+
       C.start = function () {
-        V.renderNavBar("C.handlerAbout()", "C.handlerHome()");
-        V.renderMovies(movies);
+        V.renderNavBar("C.handlerAbout()", "C.handlerHome()", "C.handlerMovie()");
       };
 
       
@@ -57,9 +67,9 @@
        * Elle sélectionne l'élément HTML avec l'ID "header" et y insère le contenu
        * formaté par le composant NavBar.
        */
-      V.renderNavBar = function (hAbout, hHome) {
+      V.renderNavBar = function (hAbout, hHome, hCategory) {
         let header = document.querySelector("#header");
-        header.innerHTML = NavBar.format(hAbout, hHome);
+        header.innerHTML = NavBar.format(hAbout, hHome, hCategory);
       };
 
       V.renderMovies = function (DataMovie) {
@@ -70,6 +80,11 @@
       V.renderDetail = function (MovieDetail) {
         let content = document.querySelector("#content");
         content.innerHTML = Detail.format(MovieDetail);
+      };
+
+      V.renderCategory = function (handler) {
+        let content = document.querySelector("#header");
+        content.innerHTML = Category.format(handler);
       };
 
       C.start(); // Démarre l'application

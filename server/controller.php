@@ -22,7 +22,11 @@ require("model.php");
 
 
 function readMoviesController(){
-    $movies = getAllMovies();
+    if (isset($_REQUEST['categorie']) == null){
+        return false;
+    };
+    $cat = $_REQUEST['categorie'];
+    $movies = getAllMovies($cat);
     return $movies;
 }
 
@@ -41,7 +45,7 @@ function addMoviesController(){
 }
 
 function readMovieDetailsController(){
-    if (isset($_REQUEST['id']) == false){
+    if (isset($_REQUEST['id']) == null){
         return false;
     };
     $id = $_REQUEST['id'];

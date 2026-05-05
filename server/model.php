@@ -19,13 +19,14 @@ define("DBLOGIN", "riveracyprien1");
 define("DBPWD", "riveracyprien1");
 
 
-function getAllMovies(){
+function getAllMovies($cat){
     // Connexion à la base de données
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     // Requête SQL pour récupérer le menu avec des paramètres
-    $sql = "select id, name, image from Movie";
+    $sql = "select id, name, image from Movie where id_category = :cat";
     // Prépare la requête SQL
     $stmt = $cnx->prepare($sql);
+    $stmt -> bindParam(':cat', $cat);
     // Exécute la requête SQL
     $stmt->execute();
     // Récupère les résultats de la requête sous forme d'objets
