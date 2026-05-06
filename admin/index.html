@@ -9,11 +9,14 @@
   <body>
     <section id="log"></section>
     <section id="form"></section>
+    <section id="profile"></section>
 
     <script type="module">
       import { Log } from "./component/Log/script.js";
       import { Form } from "./component/MovieForm/script.js";
+      import { Profile } from "./component/ProfileForm/script.js";
       import { DataMovie } from "./data/dataMovie.js";
+      import { DataProfile } from "./data/dataProfile.js";
 
       window.C = {};
 
@@ -22,11 +25,19 @@
         let fd = new FormData(form);
         let res = await DataMovie.add(fd);
         V.renderLog(res);
-      }
+      };
+
+      C.handlerAddProfile = async function(){
+        let form = document.querySelector('.addProfileForm');
+        let fd = new FormData(form);
+        let res = await DataProfile.add(fd);
+        V.renderLog(res);
+      };
 
       C.start = function () {
         V.renderLog("Démarrage de l'application");
         V.renderForm('C.handlerAddMovie()');
+        V.renderProfile('C.handlerAddProfile()');
       };
 
       window.V = {};
@@ -39,6 +50,11 @@
       V.renderForm = function (handler) {
         let content = document.querySelector("#form");
         content.innerHTML = Form.format(handler);
+      };
+      
+      V.renderProfile = function (handler) {
+        let content = document.querySelector("#profile");
+        content.innerHTML = Profile.format(handler);
       };
 
 

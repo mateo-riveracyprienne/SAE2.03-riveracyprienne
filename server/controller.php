@@ -44,6 +44,13 @@ function addMoviesController(){
     return $log;
 }
 
+function addProfileController(){
+    $nom = $_REQUEST['nom'];
+    $age = $_REQUEST['age'];
+    $log = addProfile($nom, $age);
+    return $log;
+}
+
 function readMovieDetailsController(){
     if (isset($_REQUEST['id']) == null){
         return false;

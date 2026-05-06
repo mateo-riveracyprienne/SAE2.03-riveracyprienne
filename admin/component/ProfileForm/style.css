@@ -1,0 +1,22 @@
+.profile{
+    background-color: var(--color-gray);
+    width: fit-content;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.addProfileForm{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-item {
+    padding: 0.5rem 0;
+}
+
+.form-button{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0.5rem 3rem;
+}

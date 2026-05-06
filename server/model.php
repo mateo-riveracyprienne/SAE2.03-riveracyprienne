@@ -55,6 +55,17 @@ function addMovies($tit, $rea, $year, $dur, $desc, $img, $age, $cat, $url){
     return $res;
 }
 
+function addProfile($nom, $age){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "INSERT INTO Profile (name, min_age) VALUES (:nom, :age)";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> bindParam(':nom', $nom);
+    $stmt -> bindParam(':age', $age);
+    $stmt->execute();
+    $res = "Profil ajouté";
+    return $res;
+}
+
 function getMovieDetails($id){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "select Category.name as category, Movie.* from Movie INNER JOIN Category ON Category.id = Movie.id_category WHERE Movie.id = :id";
