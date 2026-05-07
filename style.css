@@ -1,0 +1,28 @@
+.accueil{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 2rem;
+}
+
+.list-item{
+    display: flex;
+    justify-content: center;
+    width: 14rem;
+    border: solid 0.2rem black;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    font-weight: 800;
+    text-decoration: none;
+    background-color: blueviolet;
+    color: black;
+}
+

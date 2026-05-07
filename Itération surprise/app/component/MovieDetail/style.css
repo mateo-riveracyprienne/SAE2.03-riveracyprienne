@@ -1,0 +1,33 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black);
+}
+
+.detail-title {
+  font-size: 2rem;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.detail-text_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-image{
+  height: 20rem;
+}
+
+.detail-subtitle{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.detail-text{
+  font-size: 0.9rem;
+}

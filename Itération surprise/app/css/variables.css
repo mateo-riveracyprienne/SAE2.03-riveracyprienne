@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&display=swap");
+
+@font-face {
+  font-family: 'Riforma';
+  src: url('./font/RiformaLLWeb-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  /* Primitive Tokens */
+  --color-black: hsl(253, 69%, 8%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-gray-light: hsl(0, 0%, 80%);
+  --color-gray: hsl(0, 0%, 50%);
+  --color-gray-dark: hsl(0, 0%, 20%);
+  --ff-sans: "DM sans", sans-serif;
+  --ff-riforma: 'Riforma';
+
+  /* Sementic Tokens */
+  --color-fg: var(--color-white);
+  --color-bg: var(--color-gray-dark);
+}
