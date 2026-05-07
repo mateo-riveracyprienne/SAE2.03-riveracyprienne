@@ -27,7 +27,6 @@
 }
 
 .movie__title {
-  position: absolute;
   font-size: 1rem;
   top: 1em;
   right: 1em;
